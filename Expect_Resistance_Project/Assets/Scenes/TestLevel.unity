@@ -217,9 +217,9 @@ GameObject:
   - component: {fileID: 565252632}
   - component: {fileID: 565252634}
   - component: {fileID: 565252633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,8 @@ GameObject:
   m_Component:
   - component: {fileID: 755963262}
   - component: {fileID: 755963263}
-  m_Layer: 0
+  - component: {fileID: 755963264}
+  m_Layer: 6
   m_Name: Wall Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,13 +340,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755963261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.75, y: 3.4781, z: 0.8894329}
+  m_LocalRotation: {x: -0, y: -0, z: 0.15588407, w: 0.98777544}
+  m_LocalPosition: {x: -29.93, y: 1.69, z: 0.8894329}
   m_LocalScale: {x: 1, y: 11.5563, z: 1}
   m_Children: []
   m_Father: {fileID: 1028719216}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.936}
 --- !u!212 &755963263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -397,6 +398,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &755963264
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755963261}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &818045521
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +434,8 @@ GameObject:
   m_Component:
   - component: {fileID: 818045522}
   - component: {fileID: 818045523}
-  m_Layer: 0
+  - component: {fileID: 818045524}
+  m_Layer: 6
   m_Name: Wall Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,6 +507,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &818045524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818045521}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1028719215
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,9 +581,9 @@ GameObject:
   - component: {fileID: 1159359261}
   - component: {fileID: 1159359263}
   - component: {fileID: 1159359262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (0)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -636,7 +690,7 @@ GameObject:
   - component: {fileID: 1337271333}
   - component: {fileID: 1337271332}
   - component: {fileID: 1337271331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337271330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5409007, y: -2.7851982, z: 0.8894329}
+  m_LocalPosition: {x: 5.5409007, y: -2.7851982, z: 0}
   m_LocalScale: {x: 67.596695, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1028719216}
@@ -744,7 +798,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1492248291}
   - component: {fileID: 1492248292}
-  m_Layer: 0
+  - component: {fileID: 1492248293}
+  m_Layer: 6
   m_Name: Small Wall (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492248290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.4504, y: -0.379, z: 0.8894329}
+  m_LocalPosition: {x: 23.4504, y: -0.379, z: 0}
   m_LocalScale: {x: 1.6205873, y: 3.8421602, z: 1}
   m_Children: []
   m_Father: {fileID: 1028719216}
@@ -816,6 +871,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1492248293
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492248290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1993291188
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,9 +908,9 @@ GameObject:
   - component: {fileID: 1993291192}
   - component: {fileID: 1993291191}
   - component: {fileID: 1993291190}
-  - component: {fileID: 1993291189}
-  - component: {fileID: 1993291194}
+  - component: {fileID: 1993291195}
   - component: {fileID: 1993291193}
+  - component: {fileID: 1993291189}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -837,27 +918,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1993291189
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &1993291189
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993291188}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc87a783f298a640b6bde629baa8539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.2
+  jumpHeight: 4
+  timeToJumpApex: 0.4
+  fallGravityMultiplier: 2
+  wallSlideSpeedMax: 3
+  wallStickTime: 0.2
+  wallJumpClimb: {x: 5, y: 7}
+  wallJumpOff: {x: 2, y: 0.5}
+  wallJumpAway: {x: 10, y: 5}
+  slidingJump: {x: 20, y: 1}
+  isJumpPressed: 0
+  maxCharacterPositionOffset: 50
+  maxCharacterFallingSpeed: 0
+  autoMove: 0
 --- !u!61 &1993291190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,7 +1031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993291188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5197462, z: 0}
+  m_LocalPosition: {x: -29.68, y: -1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -959,10 +1047,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993291188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2527477837c8cac4a824ff5dd7163cf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 32f3138dab3c6db4ea90efb4af1c3630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1993291194
+  distanceBetwenHorizontalRays: 0.25
+  distanceBetwenVerticalRays: 0.25
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 64
+  maxSlopeAngle: 60
+  maxSlideUpSlopeAngle: 90
+  platfromTag: Platform
+--- !u!114 &1993291195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -971,9 +1067,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993291188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5321081ec1f753a43a65e54cecda71f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1a6793e64fb5cea4db277fe3c883121f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1993291189}
+        m_TargetAssemblyTypeName: noGame.Characters.PlayerCharacterController2D,
+          Assembly-CSharp
+        m_MethodName: OnHorizontal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ebc3743a-3789-4485-ac75-15918c05263b
+    m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d,/Keyboard/s,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1993291189}
+        m_TargetAssemblyTypeName: noGame.Characters.PlayerCharacterController2D,
+          Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32f4e6ff-f272-432a-a1c2-08f9fde6cdef
+    m_ActionName: Player/Jump[/Keyboard/w,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1993291189}
+        m_TargetAssemblyTypeName: noGame.Characters.PlayerCharacterController2D,
+          Assembly-CSharp
+        m_MethodName: OnDownKey
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 50609875-a67b-487c-80ac-c01d06cbd7ee
+    m_ActionName: Player/DropDown[/Keyboard/s]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2139418543
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,9 +1162,9 @@ GameObject:
   - component: {fileID: 2139418544}
   - component: {fileID: 2139418546}
   - component: {fileID: 2139418545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
