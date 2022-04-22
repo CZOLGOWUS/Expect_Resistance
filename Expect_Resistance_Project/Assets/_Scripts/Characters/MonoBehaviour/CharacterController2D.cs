@@ -259,9 +259,7 @@ namespace noGame.Characters
                 //check if terain hit is a wall or angle of the wall is too much too climb
                 if (!collisions.isAscendingSlope || slopeAngle > maxSlopeAngle)
                 {
-                    #region debug
-                    print("here");
-                    #endregion
+                    //I think this might be the reson for jumping behaviour up maxAngleSlopes
                     SnapToHorizontalHit(ref velocity, directionX, distance, slopeAngle);
                 }
 
