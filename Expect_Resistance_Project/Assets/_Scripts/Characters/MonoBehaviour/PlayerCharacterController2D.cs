@@ -55,9 +55,9 @@ namespace noGame.Characters
         private float initialJumpVelocity = 10f;
         private bool isJumping = false;
 
-        private float movementInput;
-        private bool isDownKeyPressed;
-        [SerializeField] private bool isJumpPressed = false; //button
+        protected float movementInput;
+        protected bool isDownKeyPressed;
+        [SerializeField] protected bool isJumpPressed = false; //button
 
         private Vector2 currentVelocity;
         private Vector2 nextVelocity;
@@ -289,7 +289,7 @@ namespace noGame.Characters
         }
 
 
-        private void CheckIfStandingOnPhasePlatform()
+        protected void CheckIfStandingOnPhasePlatform()
         {
             if (thisCharacterController.isGrounded)
             {
