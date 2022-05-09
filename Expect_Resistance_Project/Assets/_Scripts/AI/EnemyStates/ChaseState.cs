@@ -7,6 +7,7 @@ namespace noGame.EnemyBehaviour
     internal class ChaseState : EnemyState
     {
         Vector3 targetDirection;
+        float horizontalInput;
         public ChaseState(SimpleEnemy ctx) : base(ctx)
         {
         }
@@ -20,7 +21,14 @@ namespace noGame.EnemyBehaviour
         {
             if (ctx.TargetObject == null) targetDirection = Vector3.zero;
             else targetDirection = ctx.TargetObject.transform.position - ctx.gameObject.transform.position;
-            ctx.Controller.OnAIHorizontal(Mathf.Clamp(targetDirection.x,-1,1));
+
+            horizontalInput = Mathf.Clamp(targetDirection.x*ctx.HorizontalInputBoost, -1, 1);
+            if(Mathf.Abs(horizontalInput) < ctx.StopMovementDistance)
+            {
+                horizontalInput = 0;
+            }
+
+            ctx.Controller.OnAIHorizontal(horizontalInput);
         }
     }
 }
