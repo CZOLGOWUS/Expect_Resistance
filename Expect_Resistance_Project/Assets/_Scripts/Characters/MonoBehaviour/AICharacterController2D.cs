@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace noGame.Characters
 {
-    public class AICharacterController2D : PlayerCharacterController2D // TODO: Add base class for both AI and Player controllers or make separate layer of classes just to bind inputs
+    public class AICharacterController2D : GeneralCharacterController2D
     {
         public void OnAIHorizontal(float movementImput)
         {
