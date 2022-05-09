@@ -72,7 +72,7 @@ namespace noGame.EnemyBehaviour
             );
 
             RaycastHit2D hit = Physics2D.Raycast(detectionSource, Vector2.right * patrollDirection, ctx.StopMovementDistance);
-            if (hit && !hit.collider.CompareTag("Player")) // TODO: replace with layers?
+            if (hit && !hit.collider.CompareTag("Player") && !hit.collider.CompareTag("Enemy")) // TODO: replace with layers?
             {
                 StartWaiting();
             }
