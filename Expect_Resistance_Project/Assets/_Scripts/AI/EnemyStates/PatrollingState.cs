@@ -57,11 +57,8 @@ namespace noGame.EnemyBehaviour
             );
 
             RaycastHit2D hit = Physics2D.Raycast(detectionSource, Vector2.down, 5);
-            Debug.DrawLine(detectionSource, Vector3.zero);
-            //Debug.DrawRay(detectionSource, Vector2.right * Vector2.down, Color.yellow, 5);
             if (!hit || hit.distance > 0.002f)
             {
-                Debug.Log("Edge detected.");
                 StartWaiting();
             }
         }
@@ -77,7 +74,6 @@ namespace noGame.EnemyBehaviour
             RaycastHit2D hit = Physics2D.Raycast(detectionSource, Vector2.right * patrollDirection, ctx.StopMovementDistance);
             if (hit && !hit.collider.CompareTag("Player")) // TODO: replace with layers?
             {
-                Debug.Log("Obstacle detected.");
                 StartWaiting();
             }
         }
