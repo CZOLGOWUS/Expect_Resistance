@@ -23,6 +23,7 @@ public class SimpleEnemy : MonoBehaviour
     EnemyState state;
     PatrollingState patrollingState;
     ChaseState chaseState;
+    IdleState idleState;
 
     AICharacterController2D controller;
     GameObject targetObject;
@@ -39,6 +40,7 @@ public class SimpleEnemy : MonoBehaviour
         controller = GetComponent<AICharacterController2D>();
         chaseState = new ChaseState(this);
         patrollingState = new PatrollingState(this,initailPatrollDirection,breakTime);
+        idleState = new IdleState(this);
     }
 
     void Start()
@@ -49,18 +51,22 @@ public class SimpleEnemy : MonoBehaviour
 
     void Update()
     {
-        Physics2D.OverlapCircleNonAlloc(gameObject.transform.position, killRadius, detectedObjects);
-        for(int i = 0; i < detectedObjects.Length; i++)
-        {
-            if (detectedObjects[i] == null) break;
-            if(detectedObjects[i].gameObject.CompareTag("Player")) // TO DO: use layers?
-            {
-                Debug.Log("Player killed");
-                detectedObjects[i].gameObject.GetComponent<PlayerCharacterController2D>().enabled = false;
-            }
-        }
         state.Update();
         controller.OnAIHorizontal(horizontalInput);
+    }
+
+    internal void KillCheck()
+    {
+        Physics2D.OverlapCircleNonAlloc(gameObject.transform.position, killRadius, detectedObjects);
+        for (int i = 0; i < detectedObjects.Length; i++)
+        {
+            if (detectedObjects[i] == null) break;
+            if (detectedObjects[i].gameObject.CompareTag("Player")) // TO DO: use layers?
+            {
+                detectedObjects[i].gameObject.GetComponent<PlayerCharacterController2D>().enabled = false;
+                ChangeState(idleState);
+            }
+        }
     }
 
     internal void ChangeState(EnemyState state)

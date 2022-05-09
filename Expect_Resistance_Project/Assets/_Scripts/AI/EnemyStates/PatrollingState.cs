@@ -45,6 +45,7 @@ namespace noGame.EnemyBehaviour
                 patrollDirection = -patrollDirection;
                 ctx.HorizontalInput = patrollDirection;
             }
+            ctx.KillCheck();
         }
 
         private void HandleEdge()

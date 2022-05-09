@@ -26,6 +26,8 @@ namespace noGame.EnemyBehaviour
             {
                 ctx.HorizontalInput = 0;
             }
+
+            ctx.KillCheck();
         }
     }
 }
