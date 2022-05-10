@@ -936,6 +936,8 @@ MonoBehaviour:
   jumpHeight: 4
   timeToJumpApex: 0.4
   fallGravityMultiplier: 2
+  dashCooldown: 2
+  dashVector: {x: 30, y: 5}
   wallSlideSpeedMax: 3
   wallStickTime: 0.2
   wallJumpClimb: {x: 5, y: 7}
@@ -1146,6 +1148,23 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 50609875-a67b-487c-80ac-c01d06cbd7ee
     m_ActionName: Player/DropDown[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1993291189}
+        m_TargetAssemblyTypeName: noGame.Characters.PlayerCharacterController2D,
+          Assembly-CSharp
+        m_MethodName: OnDashKeyPress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 086cc9f2-aa07-4ede-8740-3cfd2870e833
+    m_ActionName: Player/dash[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

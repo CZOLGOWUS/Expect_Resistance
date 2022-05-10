@@ -24,6 +24,14 @@ namespace noGame.Characters
         [SerializeField] private float timeToJumpApex = 0.3f;
         [SerializeField] private float fallGravityMultiplier = 2.0f;
 
+        [Header("Dash")]
+        [SerializeField] private float dashCooldown = 2f;
+        [SerializeField] private Vector2 dashVector;
+
+        private float dashTimer = 0f;
+
+
+
         [Header("WallJumping")]
         [SerializeField] private float wallSlideSpeedMax = 3f;
         [SerializeField] private float wallStickTime = .2f;
@@ -72,7 +80,7 @@ namespace noGame.Characters
 
 
         float countTime;
-
+        
 
         private void Awake()
         {
@@ -85,7 +93,7 @@ namespace noGame.Characters
 
         private void Update()
         {
-
+            dashTimer += Time.deltaTime;
         }
 
         private void FixedUpdate()
@@ -378,6 +386,18 @@ namespace noGame.Characters
             else if (ctx.canceled)
             {
                 isDownKeyPressed = false;
+            }
+        }
+
+        public void OnDashKeyPress(InputAction.CallbackContext ctx)
+        {
+            if (ctx.performed)
+            {
+                if (dashTimer >= dashCooldown && movementInput != 0f)
+                {
+                    AddForce(ref currentVelocity,  dashVector * Mathf.Sign(movementInput));
+                    dashTimer = 0f;
+                }
             }
         }
 
