@@ -10,9 +10,12 @@ namespace noGame.EnemyBehaviour
         float patrollDirection;
         float breakInitialTime;
         float breakTimer;
+        float detectionLevel;
         bool isBreak;
+        bool isSeeingPlayer;
 
         Vector2 detectionSource;
+        Vector3 targetDirection;
 
         public PatrollingState(SimpleEnemy ctx, float initialPatrollDirection, float breakInitialTime) : base(ctx)
         {
@@ -35,6 +38,9 @@ namespace noGame.EnemyBehaviour
                 HandleEdge();
                 HandleObstacle();
             }
+
+            HandlePlayerDetection();
+            HandleDetectionLevel();
         }
         void HandleBreak()
         {
@@ -83,6 +89,49 @@ namespace noGame.EnemyBehaviour
             isBreak = true;
             breakTimer = breakInitialTime;
             ctx.HorizontalInput = 0;
+        }
+
+        private void HandlePlayerDetection()
+        {
+            targetDirection = ctx.TargetObject.transform.position - ctx.gameObject.transform.position;
+            if (Mathf.Abs(Mathf.Atan2(Mathf.Abs(targetDirection.y), Mathf.Abs(targetDirection.x))) < Mathf.Deg2Rad*45  &&
+                Mathf.Sign(targetDirection.x) == Mathf.Sign(patrollDirection))    
+            {
+                Debug.DrawLine(ctx.gameObject.transform.position, ctx.gameObject.transform.position + targetDirection, Color.grey);
+                RaycastHit2D hit = Physics2D.Raycast(ctx.gameObject.transform.position, targetDirection, ctx.DetectionRadius, ctx.DetectionMask);
+
+                if (hit && hit.collider.CompareTag("Player"))
+                {
+                    Debug.DrawLine(ctx.gameObject.transform.position, ctx.gameObject.transform.position + targetDirection, Color.red);
+                    isSeeingPlayer = true;
+                }
+                else
+                {
+                    isSeeingPlayer = false;
+                }
+            }
+            else
+            {
+                isSeeingPlayer = false;
+            }
+        }
+
+        private void HandleDetectionLevel()
+        {
+            if (isSeeingPlayer)
+            {
+                detectionLevel += Time.deltaTime;
+                if (detectionLevel > ctx.DetectionLevelThreashold)
+                {
+                    ctx.ChangeState(ctx.chaseState);
+                }
+            }
+            else if (detectionLevel > 0)
+            {
+                detectionLevel -= Time.deltaTime * ctx.DetectionLevelDecreaseFactor;
+                if (detectionLevel < 0)
+                    detectionLevel = 0;
+            }
         }
     }
 }
