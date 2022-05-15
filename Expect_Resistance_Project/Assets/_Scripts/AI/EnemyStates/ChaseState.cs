@@ -42,7 +42,7 @@ namespace noGame.EnemyBehaviour
         private void HandleJump()
         {
             ctx.JumpInput(targetDirection.y > significantYDifference && (ctx.IsGrounded() || !ctx.IsFalling()));
-
+            Debug.Log("JUMP: " + (targetDirection.y > significantYDifference && (ctx.IsGrounded() || !ctx.IsFalling())));
         }
     }
 }
