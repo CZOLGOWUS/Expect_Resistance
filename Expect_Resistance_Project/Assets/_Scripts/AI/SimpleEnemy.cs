@@ -81,6 +81,11 @@ public class SimpleEnemy : MonoBehaviour
         }
     }
 
+    internal void TryPhaseDown()
+    {
+        controller.OnAIDownKey(true);
+    }
+
     internal void ChangeState(EnemyState state)
     {
         this.state = state;

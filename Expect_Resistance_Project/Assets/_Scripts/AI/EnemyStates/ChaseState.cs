@@ -28,6 +28,13 @@ namespace noGame.EnemyBehaviour
             }
 
             ctx.KillCheck();
+
+            HandlePhaseDown();
+        }
+
+        private void HandlePhaseDown()
+        { 
+            if(targetDirection.y < -0.05f) ctx.TryPhaseDown();
         }
     }
 }
