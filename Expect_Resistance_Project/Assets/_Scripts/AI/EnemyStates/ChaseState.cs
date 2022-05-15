@@ -22,7 +22,7 @@ namespace noGame.EnemyBehaviour
             else targetDirection = ctx.TargetObject.transform.position - ctx.gameObject.transform.position;
 
             ctx.HorizontalInput = Mathf.Clamp(targetDirection.x*ctx.HorizontalInputBoost, -1, 1);
-            if(Mathf.Abs(targetDirection.x) < ctx.StopMovementDistance)
+            if(Mathf.Abs(targetDirection.x) < ctx.KillRadius)
             {
                 ctx.HorizontalInput = 0;
             }

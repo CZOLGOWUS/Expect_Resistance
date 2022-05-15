@@ -8,7 +8,7 @@ using noGame.EnemyBehaviour;
 public class SimpleEnemy : MonoBehaviour
 {
     [Header("Input Generation Options")]
-    [SerializeField][Tooltip("Distance below which enemy will no longer approach target, edge or obstacle in horizontal axis")] float stopMovementDistance;
+    [SerializeField][Tooltip("Distance below which enemy will no longer approach edge or obstacle in horizontal axis")] float stopMovementDistance;
     [SerializeField] float horizontalInputBoost;
     [SerializeField][Range(-1,1)] float initailPatrollDirection;
     [SerializeField][Tooltip("Break time before changing patrolling direction")] float breakTime;
