@@ -16,6 +16,7 @@ public class SimpleEnemy : MonoBehaviour
     [Header("Detection System")]
     [SerializeField] float killRadius;
     [SerializeField] float detectionRadius;
+    [SerializeField][Range(0, 90)][Tooltip("Above this angle (both up and down) enemy will not see player")] float detectionMaxAngle;
     [SerializeField][Tooltip("Time in seconds in which enemy will react after continously seeing player (increasing detection level)")] float detectionLevelThreashold;
     [SerializeField][Range(0, 1)][Tooltip("Rate at which enemy will loose detection level when not seeing player")] float detectionLevelDecreaseFactor;
     [SerializeField] int detectionMask;
@@ -42,7 +43,7 @@ public class SimpleEnemy : MonoBehaviour
     public float DetectionLevelThreashold { get => detectionLevelThreashold; }
     public float DetectionLevelDecreaseFactor { get => detectionLevelDecreaseFactor; }
     public int DetectionMask { get => detectionMask; }
-
+    public float DetectionRadius1 { get => detectionRadius; set => detectionRadius = value; }
 
     void Awake()
     {
