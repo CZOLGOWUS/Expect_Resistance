@@ -7,6 +7,7 @@ namespace noGame.EnemyBehaviour
     internal class ChaseState : EnemyState
     {
         Vector3 targetDirection;
+        const float significantYDifference = 0.05f;
         public ChaseState(SimpleEnemy ctx) : base(ctx)
         {
         }
@@ -30,11 +31,18 @@ namespace noGame.EnemyBehaviour
             ctx.KillCheck();
 
             HandlePhaseDown();
+            HandleJump();
         }
 
         private void HandlePhaseDown()
         { 
-            if(targetDirection.y < -0.05f) ctx.TryPhaseDown();
+            if(targetDirection.y < -significantYDifference) ctx.PhaseDownInput();
+        }
+
+        private void HandleJump()
+        {
+            ctx.JumpInput(targetDirection.y > significantYDifference && (ctx.IsGrounded() || !ctx.IsFalling()));
+
         }
     }
 }

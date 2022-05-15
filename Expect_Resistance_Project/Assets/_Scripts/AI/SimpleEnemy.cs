@@ -81,9 +81,24 @@ public class SimpleEnemy : MonoBehaviour
         }
     }
 
-    internal void TryPhaseDown()
+    internal void PhaseDownInput()
     {
         controller.OnAIDownKey(true);
+    }
+
+    internal void JumpInput(bool active)
+    {
+        controller.OnAIJump(active);
+    }
+
+    internal bool IsFalling()
+    {
+        return controller.IsFalling;
+    }
+
+    internal bool IsGrounded()
+    {
+        return gameObject.GetComponent<CharacterController2D>().isGrounded;
     }
 
     internal void ChangeState(EnemyState state)

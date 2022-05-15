@@ -70,6 +70,7 @@ namespace noGame.Characters
 
         float countTime;
 
+        public bool IsFalling { get => isFalling; }
 
         private void Awake()
         {
