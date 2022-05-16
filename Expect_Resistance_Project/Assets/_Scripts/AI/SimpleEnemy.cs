@@ -12,6 +12,7 @@ public class SimpleEnemy : MonoBehaviour
     [SerializeField] float horizontalInputBoost;
     [SerializeField][Range(-1,1)] float initailPatrollDirection;
     [SerializeField][Tooltip("Break time before changing patrolling direction")] float breakTime;
+    [SerializeField][Tooltip("Break time before changing patrolling direction")] float minJumpDelay;
 
     [Header("Detection System")]
     [SerializeField] float killRadius;
@@ -43,13 +44,14 @@ public class SimpleEnemy : MonoBehaviour
     public float DetectionLevelThreashold { get => detectionLevelThreashold; }
     public float DetectionLevelDecreaseFactor { get => detectionLevelDecreaseFactor; }
     public int DetectionMask { get => detectionMask; }
-    public float DetectionRadius1 { get => detectionRadius; set => detectionRadius = value; }
+    public float MinJumpDelay { get => minJumpDelay; set => minJumpDelay = value; }
+    public float BreakTime { get => breakTime; set => breakTime = value; }
 
     void Awake()
     {
         controller = GetComponent<AICharacterController2D>();
         chaseState = new ChaseState(this);
-        patrollingState = new PatrollingState(this,initailPatrollDirection,breakTime);
+        patrollingState = new PatrollingState(this,initailPatrollDirection);
         idleState = new IdleState(this);
         detectionMask = ~LayerMask.GetMask("Enemy");
     }

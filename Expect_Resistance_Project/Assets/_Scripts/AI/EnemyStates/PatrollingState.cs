@@ -8,7 +8,6 @@ namespace noGame.EnemyBehaviour
     internal class PatrollingState : EnemyState
     {
         float patrollDirection;
-        float breakInitialTime;
         float breakTimer;
         float detectionLevel;
         bool isBreak;
@@ -17,10 +16,9 @@ namespace noGame.EnemyBehaviour
         Vector2 detectionSource;
         Vector3 targetDirection;
 
-        public PatrollingState(SimpleEnemy ctx, float initialPatrollDirection, float breakInitialTime) : base(ctx)
+        public PatrollingState(SimpleEnemy ctx, float initialPatrollDirection) : base(ctx)
         {
             patrollDirection = Mathf.Clamp(initialPatrollDirection, -1, 1);
-            this.breakInitialTime = breakInitialTime;
         }
 
         internal override void Start()
@@ -87,7 +85,7 @@ namespace noGame.EnemyBehaviour
         void StartWaiting()
         {
             isBreak = true;
-            breakTimer = breakInitialTime;
+            breakTimer = ctx.BreakTime;
             ctx.HorizontalInput = 0;
         }
 
