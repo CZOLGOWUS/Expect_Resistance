@@ -123,7 +123,7 @@ namespace noGame.EnemyBehaviour
                 detectionLevel += Time.deltaTime;
                 if (detectionLevel > ctx.DetectionLevelThreashold)
                 {
-                    ctx.ChangeState(ctx.chaseState);
+                    ctx.OnPlayerDetected();
                 }
             }
             else if (detectionLevel > 0)

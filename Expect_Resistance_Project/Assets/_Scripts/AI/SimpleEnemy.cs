@@ -102,7 +102,12 @@ public class SimpleEnemy : MonoBehaviour
         return gameObject.GetComponent<CharacterController2D>().isGrounded;
     }
 
-    internal void ChangeState(EnemyState state)
+    internal void OnPlayerDetected()
+    {
+        ChangeState(chaseState);
+    }
+
+    private void ChangeState(EnemyState state)
     {
         this.state = state;
         state.Start();
