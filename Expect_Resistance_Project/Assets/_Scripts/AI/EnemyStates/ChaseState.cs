@@ -8,13 +8,14 @@ namespace noGame.EnemyBehaviour
     {
         Vector3 targetDirection;
         const float significantYDifference = 0.05f;
+        float timeSinceLastJump;
         public ChaseState(SimpleEnemy ctx) : base(ctx)
         {
         }
 
         internal override void Start()
         {
-            
+            timeSinceLastJump = 0;
         }
 
         internal override void Update()
@@ -41,8 +42,23 @@ namespace noGame.EnemyBehaviour
 
         private void HandleJump()
         {
-            ctx.JumpInput(targetDirection.y > significantYDifference && (ctx.IsGrounded() || !ctx.IsFalling()));
-            Debug.Log("JUMP: " + (targetDirection.y > significantYDifference && (ctx.IsGrounded() || !ctx.IsFalling())));
+            if(timeSinceLastJump >= ctx.MinJumpDelay)
+            {
+                if (targetDirection.y > significantYDifference)
+                { 
+                    timeSinceLastJump = 0;
+                    ctx.JumpInput(true);
+                }
+                else
+                {
+                    ctx.JumpInput(false);
+                }
+
+            }
+            else
+            {
+                timeSinceLastJump += Time.deltaTime;
+            }
         }
     }
 }

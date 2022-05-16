@@ -149,7 +149,7 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.2
   jumpHeight: 4
   timeToJumpApex: 0.3
-  fallGravityMultiplier: 2
+  fallGravityMultiplier: 1
   wallSlideSpeedMax: 3
   wallStickTime: 0.2
   wallJumpClimb: {x: 5, y: 7}
@@ -160,6 +160,7 @@ MonoBehaviour:
   maxCharacterPositionOffset: 50
   maxCharacterFallingSpeed: 0
   autoMove: 0
+  sustainJumpTime: 0.05
 --- !u!114 &4815068634970188587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   horizontalInputBoost: 0.2
   initailPatrollDirection: 1
   breakTime: 1
+  minJumpDelay: 0.5
   killRadius: 0.5
   detectionRadius: 6
   detectionMaxAngle: 45

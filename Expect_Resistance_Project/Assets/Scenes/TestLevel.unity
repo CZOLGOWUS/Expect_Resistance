@@ -175,8 +175,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4815068634970188587, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}
+      propertyPath: minJumpDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815068634970188587, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}
       propertyPath: initailPatrollDirection
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815068634970188588, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}
+      propertyPath: sustainJumpTime
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4815068634970188589, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}
       propertyPath: m_Name
@@ -1235,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815068634970188589, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f16917a334fb11f4b8de20af3c17c894, type: 3}

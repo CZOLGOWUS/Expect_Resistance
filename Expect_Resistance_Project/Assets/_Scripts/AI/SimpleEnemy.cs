@@ -31,7 +31,8 @@ public class SimpleEnemy : MonoBehaviour
     internal ChaseState chaseState;
     internal IdleState idleState;
 
-    AICharacterController2D controller;
+    AICharacterController2D AIController;
+    CharacterController2D characterController;
     GameObject targetObject;
     Collider2D[] detectedObjects = new Collider2D[10];
 
@@ -49,7 +50,8 @@ public class SimpleEnemy : MonoBehaviour
 
     void Awake()
     {
-        controller = GetComponent<AICharacterController2D>();
+        AIController = gameObject.GetComponent<AICharacterController2D>();
+        characterController = gameObject.GetComponent<CharacterController2D>();
         chaseState = new ChaseState(this);
         patrollingState = new PatrollingState(this,initailPatrollDirection);
         idleState = new IdleState(this);
@@ -66,7 +68,7 @@ public class SimpleEnemy : MonoBehaviour
     void Update()
     {
         state.Update();
-        controller.OnAIHorizontal(horizontalInput);
+        AIController.OnAIHorizontal(horizontalInput);
     }
 
     internal void KillCheck()
@@ -86,22 +88,22 @@ public class SimpleEnemy : MonoBehaviour
 
     internal void PhaseDownInput()
     {
-        controller.OnAIDownKey(true);
+        AIController.OnAIDownKey(true);
     }
 
     internal void JumpInput(bool active)
     {
-        controller.OnAIJump(active);
+        AIController.OnAIJump(active);
     }
 
     internal bool IsFalling()
     {
-        return controller.IsFalling;
+        return AIController.IsFalling;
     }
 
     internal bool IsGrounded()
     {
-        return gameObject.GetComponent<CharacterController2D>().isGrounded;
+        return characterController.isGrounded;
     }
 
     internal void OnPlayerDetected()
