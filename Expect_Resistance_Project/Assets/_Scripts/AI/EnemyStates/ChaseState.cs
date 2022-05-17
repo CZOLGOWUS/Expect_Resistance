@@ -7,7 +7,7 @@ namespace noGame.EnemyBehaviour
     internal class ChaseState : EnemyState
     {
         protected Vector3 targetDirection;
-        const float significantYDifference = 0.05f;
+        const float significantYDifference = 0.5f;
         float timeSinceLastJump;
         public ChaseState(SimpleEnemy ctx) : base(ctx)
         {
