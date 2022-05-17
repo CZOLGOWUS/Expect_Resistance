@@ -91,7 +91,7 @@ namespace noGame.EnemyBehaviour
 
         private void HandlePlayerDetection()
         {
-            targetDirection = ctx.TargetObject.transform.position - ctx.gameObject.transform.position;
+            targetDirection = ctx.PlayerObject.transform.position - ctx.gameObject.transform.position;
             if (Mathf.Abs(Mathf.Atan2(Mathf.Abs(targetDirection.y), Mathf.Abs(targetDirection.x))) < Mathf.Deg2Rad*45  &&
                 Mathf.Sign(targetDirection.x) == Mathf.Sign(patrollDirection))    
             {

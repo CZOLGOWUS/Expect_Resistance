@@ -6,15 +6,17 @@ namespace noGame.EnemyBehaviour
 {
     internal class ChaseState : EnemyState
     {
-        Vector3 targetDirection;
+        protected Vector3 targetDirection;
         const float significantYDifference = 0.05f;
         float timeSinceLastJump;
         public ChaseState(SimpleEnemy ctx) : base(ctx)
         {
+            
         }
 
         internal override void Start()
         {
+            ctx.TargetObject = ctx.PlayerObject;
             timeSinceLastJump = 0;
         }
 
