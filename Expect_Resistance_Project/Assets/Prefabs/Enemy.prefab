@@ -183,4 +183,7 @@ MonoBehaviour:
   detectionMaxAngle: 45
   detectionLevelThreashold: 0.2
   detectionLevelDecreaseFactor: 0.025
-  detectionMask: 0
+  visableToEnemy:
+    serializedVersion: 2
+    m_Bits: 119
+  targetAlarmButtons: []

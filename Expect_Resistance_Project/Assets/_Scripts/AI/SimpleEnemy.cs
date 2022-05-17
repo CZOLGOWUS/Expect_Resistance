@@ -23,8 +23,8 @@ namespace noGame.EnemyBehaviour
         [SerializeField][Range(0, 90)][Tooltip("Above this angle (both up and down) enemy will not see player")] float detectionMaxAngle;
         [SerializeField][Tooltip("Time in seconds in which enemy will react after continously seeing player (increasing detection level)")] float detectionLevelThreashold;
         [SerializeField][Range(0, 1)][Tooltip("Rate at which enemy will loose detection level when not seeing player")] float detectionLevelDecreaseFactor;
-        [SerializeField] int detectionMask;
         // note: Detection level is defined in PatrollingState since it's not used elsewhere. Consider moving it to this class if more states would like to detect player.
+        [SerializeField] LayerMask visableToEnemy;
 
         [Header("Alarm")]
         [SerializeField] GameObject[] targetAlarmButtons;
@@ -53,7 +53,7 @@ namespace noGame.EnemyBehaviour
         internal float HorizontalInput { get => horizontalInput; set => horizontalInput = value; }
         public float DetectionLevelThreashold { get => detectionLevelThreashold; }
         public float DetectionLevelDecreaseFactor { get => detectionLevelDecreaseFactor; }
-        public int DetectionMask { get => detectionMask; }
+        public LayerMask DetectionMask { get => visableToEnemy; }
         public float MinJumpDelay { get => minJumpDelay; set => minJumpDelay = value; }
         public float BreakTime { get => breakTime; set => breakTime = value; }
         public GameObject PlayerObject { get => playerObject; }
@@ -66,7 +66,6 @@ namespace noGame.EnemyBehaviour
             chaseState = new ChaseState(this);
             patrollingState = new PatrollingState(this, initailPatrollDirection);
             idleState = new IdleState(this);
-            detectionMask = ~LayerMask.GetMask("Enemy");
             playerObject = GameObject.FindGameObjectWithTag("Player");
             alarm = GameObject.FindObjectOfType<AlarmSystem>();
             if(alarm != null)
