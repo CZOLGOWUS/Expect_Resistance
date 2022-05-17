@@ -32,6 +32,7 @@ namespace noGame.EnemyBehaviour
             if(targetDirection.magnitude < ctx.KillRadius) // may replace with dedicated radius
             {
                 // TO DO: Interact with button
+                ctx.Alarm.AlarmAll();
                 ctx.ChangeState(ctx.chaseState);
             }
         }

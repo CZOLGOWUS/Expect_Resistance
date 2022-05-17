@@ -42,6 +42,7 @@ namespace noGame.EnemyBehaviour
         GameObject targetObject;
         GameObject playerObject;
         Collider2D[] detectedObjects = new Collider2D[10];
+        AlarmSystem alarm;
 
         public float HorizontalInputBoost { get => horizontalInputBoost; }
         public float KillRadius { get => killRadius; set => killRadius = value; }
@@ -56,6 +57,7 @@ namespace noGame.EnemyBehaviour
         public float MinJumpDelay { get => minJumpDelay; set => minJumpDelay = value; }
         public float BreakTime { get => breakTime; set => breakTime = value; }
         public GameObject PlayerObject { get => playerObject; }
+        internal AlarmSystem Alarm { get => alarm;}
 
         void Awake()
         {
@@ -66,12 +68,16 @@ namespace noGame.EnemyBehaviour
             idleState = new IdleState(this);
             detectionMask = ~LayerMask.GetMask("Enemy");
             playerObject = GameObject.FindGameObjectWithTag("Player");
+            alarm = GameObject.FindObjectOfType<AlarmSystem>();
+            if(alarm != null)
+                alarm.Subscribe(OnAlarm);
         }
 
         void Start()
         {
             ChangeState(patrollingState);
             //ChangeState(chaseState);
+            
         }
 
         void Update()
@@ -116,6 +122,11 @@ namespace noGame.EnemyBehaviour
         }
 
         internal virtual void OnPlayerDetected()
+        {
+            ChangeState(chaseState);
+        }
+
+        public void OnAlarm()
         {
             ChangeState(chaseState);
         }
