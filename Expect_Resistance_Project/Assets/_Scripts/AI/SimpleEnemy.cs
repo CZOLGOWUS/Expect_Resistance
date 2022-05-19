@@ -29,6 +29,10 @@ namespace noGame.EnemyBehaviour
         [Header("Alarm")]
         [SerializeField] GameObject[] targetAlarmButtons;
 
+        [Header("Other")]
+        [SerializeField] protected GameObject exclamationMarkPrefab;
+        [SerializeField] protected Vector2 exclamationMarkPosition;
+
 
         float horizontalInput;
 
@@ -123,6 +127,7 @@ namespace noGame.EnemyBehaviour
         internal virtual void OnPlayerDetected()
         {
             ChangeState(chaseState);
+            Instantiate(exclamationMarkPrefab,gameObject.transform.position + (Vector3)exclamationMarkPosition,Quaternion.identity,gameObject.transform);
         }
 
         public void OnAlarm()

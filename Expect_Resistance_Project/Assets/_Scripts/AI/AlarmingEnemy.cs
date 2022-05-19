@@ -16,6 +16,7 @@ namespace noGame.EnemyBehaviour
         override internal void OnPlayerDetected()
         {
             ChangeState(alarmingState);
+            Instantiate(exclamationMarkPrefab, gameObject.transform.position + (Vector3)exclamationMarkPosition, Quaternion.identity, gameObject.transform);
         }
     }
 }
