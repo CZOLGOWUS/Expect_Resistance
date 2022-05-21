@@ -4,10 +4,12 @@ using UnityEngine;
 
 namespace noGame.Characters
 {
-    [RequireComponent(typeof(CharacterController2D))]
+    [RequireComponent(typeof(CharacterController2D),typeof(SpriteRenderer),typeof(Animator))]
     public class GeneralCharacterController2D : MonoBehaviour
     {
         private CharacterController2D thisCharacterController;
+        private Animator thisAnimator;
+        private SpriteRenderer thisSpriteRenderer;
 
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 10f;
@@ -72,9 +74,18 @@ namespace noGame.Characters
 
         public bool IsFalling { get => isFalling; }
 
+
+        //aniamtion
+        int animIsJumping = Animator.StringToHash("IsJumping");
+        int animIsWallGrabbing = Animator.StringToHash("IsWallSliding");
+        int animRunningSpeed = Animator.StringToHash("RunningSpeed");
+
+
         private void Awake()
         {
             thisCharacterController = GetComponent<CharacterController2D>();
+            thisAnimator = GetComponent<Animator>();
+            thisSpriteRenderer = GetComponent<SpriteRenderer>();
 
             //this is here for debuging purposes
             SetupJumpVariales();
@@ -107,10 +118,20 @@ namespace noGame.Characters
 
             thisCharacterController.Move(nextVelocity * Time.deltaTime);
 
-
+            HandleCharacterAnimationState();
 
             HandleVerticalImpactVelocity();
 
+        }
+
+        private void HandleCharacterAnimationState()
+        {
+            thisSpriteRenderer.flipX = nextVelocity.x > 0f || (thisCharacterController.collisions.left && wallDirX == -1) ? false : true;
+
+
+            thisAnimator.SetFloat(animRunningSpeed, Mathf.Abs(nextVelocity.x));
+            thisAnimator.SetBool(animIsJumping, isJumping);
+            thisAnimator.SetBool(animIsWallGrabbing, wallDirX != 0 ? true : false);
         }
 
         private void SetupJumpVariales()
@@ -138,13 +159,15 @@ namespace noGame.Characters
 
         }
 
-
+        
         private void HandleWallJumping()
         {
             if (thisCharacterController.collisions.left)
                 wallDirX = -1;
             else if (thisCharacterController.collisions.right)
                 wallDirX = 1;
+            else
+                wallDirX = 0;
 
             isWallSlliding = false;
 
