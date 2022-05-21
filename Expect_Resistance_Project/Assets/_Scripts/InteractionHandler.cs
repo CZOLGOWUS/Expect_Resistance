@@ -50,7 +50,7 @@ public class InteractionHandler : MonoBehaviour
             if (detectedObjects[i] == null) break;
 
             temp = detectedObjects[i].gameObject.GetComponent<Interactable>();
-            if (temp!=null) 
+            if (temp!=null && temp.isActive) 
             {
                 tempMag = (detectedObjects[i].transform.position - gameObject.transform.position).sqrMagnitude;
                 if (minDistance > tempMag)
@@ -69,7 +69,7 @@ public class InteractionHandler : MonoBehaviour
                 if (playerTip != null)
                 {
                     playerTip.text = "[E] " + nearestInteractable.UserTip; // this [E] should not be defined here, but it's good for now
-                    progressBarParent.SetActive(true);
+                    if(nearestInteractable.InteractionTime>0) progressBarParent.SetActive(true);
                 }
             }
 
@@ -83,7 +83,8 @@ public class InteractionHandler : MonoBehaviour
                 }
             }
 
-            progressBar.localScale = new Vector3(timer / nearestInteractable.InteractionTime, 1);
+            if(nearestInteractable.InteractionTime != 0)
+                progressBar.localScale = new Vector3(timer / nearestInteractable.InteractionTime, 1);
         }
         else
         {
