@@ -9,17 +9,13 @@ public class Interactable : MonoBehaviour
     [SerializeField] string userTip;
     [SerializeField] UnityEvent onIteraction;
 
+    bool allowInteraction = true;
+
     public float InteractionTime { get => interactionTime; }
     public string UserTip { get => userTip; }
 
-    void Update()
-    {
-
-    }
-
     public void Interact()
     {
-        // play animation
         onIteraction.Invoke();
     }
 }
