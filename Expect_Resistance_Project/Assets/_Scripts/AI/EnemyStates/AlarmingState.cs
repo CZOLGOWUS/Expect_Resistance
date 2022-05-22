@@ -25,6 +25,8 @@ namespace noGame.EnemyBehaviour
                 // if no alarms, default to chasing player
                 ctx.ChangeState(ctx.chaseState);
             }
+
+            ctx.ChangeSpeed(ctx.RunSpeed);
         }
 
         internal override void Update()

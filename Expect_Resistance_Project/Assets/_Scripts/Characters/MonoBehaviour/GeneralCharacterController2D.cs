@@ -73,6 +73,7 @@ namespace noGame.Characters
         float countTime;
 
         public bool IsFalling { get => isFalling; }
+        public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 
 
         //aniamtion

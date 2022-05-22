@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4768040481651698978}
   - component: {fileID: 4768040481651698977}
   - component: {fileID: 4957948637597839516}
+  - component: {fileID: 1166387864752182153}
   m_Layer: 7
   m_Name: Alarming Enemy
   m_TagString: Enemy
@@ -173,7 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f98da2c45892949acaebd739b9a03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopMovementDistance: 2
+  patrollingSpeed: 6
+  runSpeed: 10
+  stopMovementDistance: 1.2
   horizontalInputBoost: 0.2
   initailPatrollDirection: 1
   breakTime: 1
@@ -186,6 +189,26 @@ MonoBehaviour:
   visableToEnemy:
     serializedVersion: 2
     m_Bits: 119
-  targetAlarmButtons: []
   exclamationMarkPrefab: {fileID: 4599751790554543217, guid: 86484988ea45fd146baa5dbc92d26aa0, type: 3}
   exclamationMarkPosition: {x: 0.8, y: 0.8}
+  targetAlarmButtons: []
+  alarmInteractionRadius: 0
+--- !u!95 &1166387864752182153
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768040481651698976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

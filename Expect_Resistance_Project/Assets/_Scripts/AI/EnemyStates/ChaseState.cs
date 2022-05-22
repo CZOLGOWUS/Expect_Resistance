@@ -18,6 +18,7 @@ namespace noGame.EnemyBehaviour
         {
             ctx.TargetObject = ctx.PlayerObject;
             timeSinceLastJump = 0;
+            ctx.ChangeSpeed(ctx.RunSpeed);
         }
 
         internal override void Update()

@@ -26,6 +26,7 @@ namespace noGame.EnemyBehaviour
             ctx.HorizontalInput = patrollDirection;
             isBreak = false;
             breakTimer = 0;
+            ctx.ChangeSpeed(ctx.PatrollingSpeed);
         }
 
         internal override void Update()

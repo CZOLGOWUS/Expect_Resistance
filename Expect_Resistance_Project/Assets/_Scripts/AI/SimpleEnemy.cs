@@ -11,6 +11,8 @@ namespace noGame.EnemyBehaviour
     public class SimpleEnemy : MonoBehaviour
     {
         [Header("Input Generation Options")]
+        [SerializeField] float patrollingSpeed;
+        [SerializeField] float runSpeed;
         [SerializeField][Tooltip("Distance below which enemy will no longer approach edge or obstacle in horizontal axis")] float stopMovementDistance;
         [SerializeField] float horizontalInputBoost;
         [SerializeField][Range(-1, 1)] float initailPatrollDirection;
@@ -58,6 +60,8 @@ namespace noGame.EnemyBehaviour
         public float BreakTime { get => breakTime; set => breakTime = value; }
         public GameObject PlayerObject { get => playerObject; }
         internal AlarmSystem Alarm { get => alarm; }
+        public float RunSpeed { get => runSpeed; }
+        public float PatrollingSpeed { get => patrollingSpeed;  }
 
         void Awake()
         {
@@ -135,6 +139,11 @@ namespace noGame.EnemyBehaviour
         {
             this.state = state;
             state.Start();
+        }
+
+        internal void ChangeSpeed(float speed)
+        {
+            AIController.MoveSpeed = speed;
         }
 
         private void ClearDetectedObjects()
