@@ -3866,9 +3866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d4f028ab752554fb96bf5cc0e82f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalAdditionalComputers: 1
+  levelExit: {fileID: 1885323183}
   hackObjectiveUserTip: 'Objective: HACK MAINFRAME SERVER'
   escapeObjectiveUserTip: 'Objective: ESCAPE'
-  totalAdditionalComputers: 1
   scoreText: {fileID: 1670830578}
   timeText: {fileID: 1627918571}
   endScreen: {fileID: 1464465696}
