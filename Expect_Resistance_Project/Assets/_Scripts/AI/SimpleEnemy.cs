@@ -99,7 +99,11 @@ namespace noGame.EnemyBehaviour
                 if (detectedObjects[i].gameObject.CompareTag("Player")) // TO DO: use layers?
                 {
                     ChangeState(idleState);
-                    FindObjectOfType<ObjectiveController>().OnPlayerDeath();
+                    ObjectiveController oc = FindObjectOfType<ObjectiveController>();
+                    if (oc!=null)
+                    {
+                        oc.OnPlayerDeath();
+                    }
                 }
             }
         }
