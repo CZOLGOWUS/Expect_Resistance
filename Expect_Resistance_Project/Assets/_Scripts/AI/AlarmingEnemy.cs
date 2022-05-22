@@ -8,6 +8,13 @@ namespace noGame.EnemyBehaviour
     {
         internal AlarmingState alarmingState;
 
+        [Header("Alarm")]
+        [SerializeField] GameObject[] targetAlarmButtons;
+        [SerializeField] float alarmInteractionRadius;
+
+        internal GameObject[] TargetAlarmButtons { get => targetAlarmButtons;  }
+        public float AlarmInteractionRadius { get => alarmInteractionRadius; }
+
         AlarmingEnemy() : base()
         {
             alarmingState = new AlarmingState(this);

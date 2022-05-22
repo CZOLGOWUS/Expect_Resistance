@@ -6,9 +6,10 @@ namespace noGame.EnemyBehaviour
 {
     internal class AlarmingState : ChaseState
     {
-        public AlarmingState(SimpleEnemy ctx) : base(ctx)
+        AlarmingEnemy ctx;
+        public AlarmingState(AlarmingEnemy ctx) : base(ctx)
         {
-
+            this.ctx = ctx;
         }
 
         internal override void Start()
@@ -29,7 +30,7 @@ namespace noGame.EnemyBehaviour
         internal override void Update()
         {
             base.Update();
-            if(targetDirection.magnitude < ctx.KillRadius) // may replace with dedicated radius
+            if(targetDirection.magnitude < ctx.AlarmInteractionRadius)
             {
                 // TO DO: Interact with button
                 ctx.Alarm.AlarmAll();

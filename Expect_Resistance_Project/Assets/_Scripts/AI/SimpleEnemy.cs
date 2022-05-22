@@ -26,9 +26,6 @@ namespace noGame.EnemyBehaviour
         // note: Detection level is defined in PatrollingState since it's not used elsewhere. Consider moving it to this class if more states would like to detect player.
         [SerializeField] LayerMask visableToEnemy;
 
-        [Header("Alarm")]
-        [SerializeField] GameObject[] targetAlarmButtons;
-
         [Header("Other")]
         [SerializeField] protected GameObject exclamationMarkPrefab;
         [SerializeField] protected Vector2 exclamationMarkPosition;
@@ -52,7 +49,6 @@ namespace noGame.EnemyBehaviour
         public float KillRadius { get => killRadius; set => killRadius = value; }
         public float DetectionRadius { get => detectionRadius; }
         internal GameObject TargetObject { get => targetObject; set => targetObject = value; }
-        internal GameObject[] TargetAlarmButtons { get => targetAlarmButtons; set => targetAlarmButtons = value; }
         internal float StopMovementDistance { get => stopMovementDistance; }
         internal float HorizontalInput { get => horizontalInput; set => horizontalInput = value; }
         public float DetectionLevelThreashold { get => detectionLevelThreashold; }
