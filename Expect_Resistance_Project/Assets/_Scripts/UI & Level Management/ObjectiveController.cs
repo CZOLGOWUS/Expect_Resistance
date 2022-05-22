@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ObjectiveController : MonoBehaviour
 {
-    Text objectiveTip;
-
     [Header("Level")]
     [SerializeField] int totalAdditionalComputers;
     [SerializeField] Interactable levelExit;
@@ -15,6 +13,7 @@ public class ObjectiveController : MonoBehaviour
     [Header("UI")]
     [SerializeField] string hackObjectiveUserTip;
     [SerializeField] string escapeObjectiveUserTip;
+    [SerializeField] Text objectiveText;
     [SerializeField] Text scoreText;
     [SerializeField] Text timeText;
     [SerializeField] GameObject endScreen;
@@ -31,9 +30,12 @@ public class ObjectiveController : MonoBehaviour
 
     private void Awake()
     {
-        objectiveTip = gameObject.GetComponent<Text>();
-        objectiveTip.text = hackObjectiveUserTip;
+        objectiveText.text = hackObjectiveUserTip;
         Time.timeScale = 1;
+        if (levelExit == null)
+        {
+            levelExit = GameObject.Find("Exit").GetComponent<Interactable>();
+        }
         levelExit.isActive = false;
     }
     private void Update()
@@ -42,7 +44,7 @@ public class ObjectiveController : MonoBehaviour
     }
     public void MainComputerHacked()
     {
-        objectiveTip.text = escapeObjectiveUserTip;
+        objectiveText.text = escapeObjectiveUserTip;
         mainRequirement = true;
         levelExit.isActive = true;
     }

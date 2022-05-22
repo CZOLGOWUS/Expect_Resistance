@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] float interactionTime;
     [SerializeField] string userTip;
     public bool isActive;
-    [SerializeField] UnityEvent onIteraction;
+    [SerializeField] public UnityEvent onIteraction;
 
     bool allowInteraction = true;
 

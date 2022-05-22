@@ -104,4 +104,9 @@ public class InteractionHandler : MonoBehaviour
         }
     }
 
+    public void HandlePauseButton()
+    {
+        FindObjectOfType<ObjectiveController>().OnPause();
+    }
+
 }

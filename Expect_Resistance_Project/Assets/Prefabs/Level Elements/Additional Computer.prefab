@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2990977929204055750}
   - component: {fileID: 2990977929204055745}
   - component: {fileID: 2990977929204055751}
+  - component: {fileID: 4558428797428497853}
   m_Layer: 8
   m_Name: Additional Computer
   m_TagString: Untagged
@@ -102,9 +103,9 @@ MonoBehaviour:
   onIteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ObjectiveController, Assembly-CSharp
-        m_MethodName: AdditionalComputerHacked
+      - m_Target: {fileID: 4558428797428497853}
+        m_TargetAssemblyTypeName: ObjectiveControllerAutoref, Assembly-CSharp
+        m_MethodName: OnAdditionalComputer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -130,3 +131,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4558428797428497853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990977929204055747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efe94f4aac9f314a95fe1c670c15410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2019424511}
+      objectReference: {fileID: 8557793072583072392}
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AdditionalComputerHacked
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 312220432090776586, guid: 265dab0612c8cb4419915bfb42d2a80e, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2019424511}
+      objectReference: {fileID: 8557793072583072392}
     - target: {fileID: 312220432090776586, guid: 265dab0612c8cb4419915bfb42d2a80e, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TryExit
@@ -576,7 +576,7 @@ PrefabInstance:
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2019424511}
+      objectReference: {fileID: 8557793072583072392}
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AdditionalComputerHacked
@@ -750,7 +750,7 @@ PrefabInstance:
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2019424511}
+      objectReference: {fileID: 8557793072583072392}
     - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AdditionalComputerHacked
@@ -880,17 +880,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8557793072139655234, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
   m_PrefabInstance: {fileID: 8557793072583072391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2019424511 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8557793071645926008, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
-  m_PrefabInstance: {fileID: 8557793072583072391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d4f028ab752554fb96bf5cc0e82f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &43346040918056595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1010,7 +999,11 @@ PrefabInstance:
     - target: {fileID: 1496224595299331890, guid: 66b9826d7ab720840a1728f7fb472364, type: 3}
       propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2019424511}
+      objectReference: {fileID: 8557793072583072392}
+    - target: {fileID: 1496224595299331890, guid: 66b9826d7ab720840a1728f7fb472364, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainComputerHacked
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66b9826d7ab720840a1728f7fb472364, type: 3}
 --- !u!1001 &3087607246381794485
@@ -1085,6 +1078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3256965982125695358, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8557793071645926008, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
       propertyPath: levelExit
       value: 
@@ -1179,3 +1176,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
+--- !u!114 &8557793072583072392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 282324254194022578, guid: 53969ec4b827573418ef8e14e7e847e3, type: 3}
+  m_PrefabInstance: {fileID: 8557793072583072391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d4f028ab752554fb96bf5cc0e82f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
