@@ -61,7 +61,7 @@ namespace noGame.EnemyBehaviour
         public float MinJumpDelay { get => minJumpDelay; set => minJumpDelay = value; }
         public float BreakTime { get => breakTime; set => breakTime = value; }
         public GameObject PlayerObject { get => playerObject; }
-        internal AlarmSystem Alarm { get => alarm;}
+        internal AlarmSystem Alarm { get => alarm; }
 
         void Awake()
         {
@@ -72,7 +72,7 @@ namespace noGame.EnemyBehaviour
             idleState = new IdleState(this);
             playerObject = GameObject.FindGameObjectWithTag("Player");
             alarm = GameObject.FindObjectOfType<AlarmSystem>();
-            if(alarm != null)
+            if (alarm != null)
                 alarm.Subscribe(OnAlarm);
         }
 
@@ -80,7 +80,7 @@ namespace noGame.EnemyBehaviour
         {
             ChangeState(patrollingState);
             //ChangeState(chaseState);
-            
+
         }
 
         void Update()
@@ -91,15 +91,15 @@ namespace noGame.EnemyBehaviour
 
         internal void KillCheck()
         {
+            ClearDetectedObjects();
             Physics2D.OverlapCircleNonAlloc(gameObject.transform.position, killRadius, detectedObjects);
             for (int i = 0; i < detectedObjects.Length; i++)
             {
                 if (detectedObjects[i] == null) break;
                 if (detectedObjects[i].gameObject.CompareTag("Player")) // TO DO: use layers?
                 {
-                    //detectedObjects[i].gameObject.GetComponent<PlayerCharacterController2D>().enabled = false;
-                    //ChangeState(idleState);
-                    Debug.Log("Player killed");
+                    ChangeState(idleState);
+                    FindObjectOfType<ObjectiveController>().OnPlayerDeath();
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace noGame.EnemyBehaviour
         internal virtual void OnPlayerDetected()
         {
             ChangeState(chaseState);
-            Instantiate(exclamationMarkPrefab,gameObject.transform.position + (Vector3)exclamationMarkPosition,Quaternion.identity,gameObject.transform);
+            Instantiate(exclamationMarkPrefab, gameObject.transform.position + (Vector3)exclamationMarkPosition, Quaternion.identity, gameObject.transform);
         }
 
         public void OnAlarm()
@@ -139,6 +139,14 @@ namespace noGame.EnemyBehaviour
         {
             this.state = state;
             state.Start();
+        }
+
+        private void ClearDetectedObjects()
+        {
+            for (int i = 0; i < detectedObjects.Length; i++)
+            {
+                detectedObjects[i] = null;
+            }
         }
     }
 }
