@@ -192,7 +192,7 @@ MonoBehaviour:
   exclamationMarkPrefab: {fileID: 4599751790554543217, guid: 86484988ea45fd146baa5dbc92d26aa0, type: 3}
   exclamationMarkPosition: {x: 0.8, y: 0.8}
   targetAlarmButtons: []
-  alarmInteractionRadius: 0
+  alarmInteractionRadius: 1
 --- !u!95 &1166387864752182153
 Animator:
   serializedVersion: 3
