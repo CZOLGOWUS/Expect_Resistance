@@ -49,4 +49,9 @@ public class LevelLoader : MonoBehaviour
             sceneName = BASE_LEVEL_NAME + levelIndex;
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
