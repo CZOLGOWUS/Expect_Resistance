@@ -98,9 +98,8 @@ namespace noGame.EnemyBehaviour
                 if (detectedObjects[i] == null) break;
                 if (detectedObjects[i].gameObject.CompareTag("Player")) // TO DO: use layers?
                 {
-                    //detectedObjects[i].gameObject.GetComponent<PlayerCharacterController2D>().enabled = false;
-                    //ChangeState(idleState);
-                    //Debug.Log("Player killed");
+                    ChangeState(idleState);
+                    FindObjectOfType<ObjectiveController>().OnPlayerDeath();
                 }
             }
         }
