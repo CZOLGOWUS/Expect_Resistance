@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2019424511}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdditionalComputerHacked
+      objectReference: {fileID: 0}
     - target: {fileID: 2990977929204055747, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: m_Name
       value: Additional Computer (1)
@@ -846,6 +854,14 @@ PrefabInstance:
     - target: {fileID: 2990977929204055744, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2019424511}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdditionalComputerHacked
       objectReference: {fileID: 0}
     - target: {fileID: 2990977929204055747, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: m_Name
@@ -3810,6 +3826,14 @@ PrefabInstance:
     - target: {fileID: 2990977929204055744, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2019424511}
+    - target: {fileID: 2990977929204055745, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
+      propertyPath: onIteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdditionalComputerHacked
       objectReference: {fileID: 0}
     - target: {fileID: 2990977929204055747, guid: a150c287cd54e7f4f8a1c79765dfe2be, type: 3}
       propertyPath: m_Name
