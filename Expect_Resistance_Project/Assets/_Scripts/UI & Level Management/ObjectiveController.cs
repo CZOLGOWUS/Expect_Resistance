@@ -20,11 +20,15 @@ public class ObjectiveController : MonoBehaviour
     [SerializeField] GameObject endScreen;
     [SerializeField] GameObject hud;
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject pauseScreen;
 
 
     bool mainRequirement;
     int additionalComputers = 0;
     float totalTime;
+    bool isPaused;
+    bool isInMenu;
+
     private void Awake()
     {
         objectiveTip = gameObject.GetComponent<Text>();
@@ -59,6 +63,7 @@ public class ObjectiveController : MonoBehaviour
 
             endScreen.SetActive(true);
             hud.SetActive(false);
+            isInMenu = true;
         }
     }
 
@@ -83,5 +88,19 @@ public class ObjectiveController : MonoBehaviour
 
         deathScreen.SetActive(true);
         hud.SetActive(false);
+
+        isInMenu = true;
+    }
+
+    public void OnPause()
+    {
+        if(!isInMenu)
+        {
+            isPaused = !isPaused;
+            hud.SetActive(!isPaused);
+            pauseScreen.SetActive(isPaused);
+
+            Time.timeScale = isPaused ? 0 : 1;
+        }
     }
 }

@@ -302,6 +302,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 20a67bcd-e238-4b81-bf01-bd917a4f542b
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1869c75-e0a0-49db-8c0e-bc758da5ea9c
+    m_ActionName: UI/New action[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
