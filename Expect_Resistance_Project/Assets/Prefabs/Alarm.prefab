@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1565031542343582638}
   - component: {fileID: 1565031542343582639}
   - component: {fileID: 3412902328509756325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
