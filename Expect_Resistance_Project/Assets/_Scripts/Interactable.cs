@@ -17,6 +17,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        isActive = false;
         onIteraction.Invoke();
     }
 }
