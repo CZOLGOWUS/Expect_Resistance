@@ -8,12 +8,15 @@ public class AlarmSystem : MonoBehaviour
 
     public event OnAlarm onAlarm;
 
+    [SerializeField] GameObject alarmOverlay;
+
     public void Subscribe(OnAlarm deleg)
     {
         onAlarm += deleg;
     }
     public void AlarmAll()
     {
+        alarmOverlay.SetActive(true);
         onAlarm.Invoke();
     }
 
