@@ -9,6 +9,18 @@ namespace noGame.Characters
 {
     public class PlayerCharacterController2D : GeneralCharacterController2D
     {
+
+        [Header("Dash")]
+        [SerializeField] private float dashCooldown = 2f;
+        [SerializeField] private Vector2 dashVector;
+
+        private float dashTimer = 0f;
+
+        public void Update()
+        {
+            dashTimer += Time.deltaTime;
+        }
+
         //input events
         public void OnHorizontal(InputAction.CallbackContext ctx)
         {
@@ -42,5 +54,18 @@ namespace noGame.Characters
                 isDownKeyPressed = false;
             }
         }
+
+        public void OnDashKeyPress(InputAction.CallbackContext ctx)
+        {
+            if (ctx.performed)
+            {
+                if (dashTimer >= dashCooldown && movementInput != 0f)
+                {
+                    AddForce(dashVector * Mathf.Sign(movementInput));
+                    dashTimer = 0f;
+                }
+            }
+        }
+
     }
 }

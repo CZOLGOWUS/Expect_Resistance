@@ -331,6 +331,12 @@ namespace noGame.Characters
 
 
         // public methods
+        public void AddForce(Vector2 force)
+        {
+            currentVelocity.x += force.x;
+            currentVelocity.y += force.y;
+        }
+
         public void AddForce(ref Vector2 velocity, Vector2 force)
         {
             velocity.x += force.x;
