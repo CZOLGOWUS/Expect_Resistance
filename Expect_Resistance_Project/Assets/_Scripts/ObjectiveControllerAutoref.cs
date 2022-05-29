@@ -28,4 +28,9 @@ public class ObjectiveControllerAutoref : MonoBehaviour
     {
         controller.AdditionalComputerHacked();
     }
+
+    public void OnPause()
+    {
+        controller.OnPause();
+    }
 }
