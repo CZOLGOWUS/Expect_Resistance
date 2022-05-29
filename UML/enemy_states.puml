@@ -1,0 +1,20 @@
+@startuml
+
+
+
+state Enemy{
+    state enemy_type <<choice>>
+    [*] --> PatrollingState
+
+    PatrollingState --> enemy_type: player detected\nor alarm activated
+    enemy_type --> ChaseState: is\nSimpleEnemy
+    enemy_type --> AlarmingState: is\nAlarmingEnemy
+    AlarmingState --> ChaseState: alarm activated\nor no alarm
+
+    PatrollingState: Enemy moves left and right\non its platform.
+    AlarmingState: Enemy moves towards alarm\nbutton and activates it.
+    ChaseState: Enemy chases player.
+}
+
+Enemy-->[*]: player killed or level finished
+@enduml
