@@ -139,6 +139,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alarming Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4768040481651698980, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768040481651698980, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768040481651698980, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4768040481651698981, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -149,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4768040481651698981, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6753376
+      value: 3.81
       objectReference: {fileID: 0}
     - target: {fileID: 4768040481651698981, guid: 49251d97e28b9a043bb78aeb67f8ea58, type: 3}
       propertyPath: m_LocalPosition.z
