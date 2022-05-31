@@ -76,11 +76,16 @@ public class InteractionHandler : MonoBehaviour
             if (isInteractPressed)
             {
                 timer += Time.deltaTime;
+                nearestInteractable.Progress();
                 if (timer > nearestInteractable.InteractionTime)
                 {
                     nearestInteractable.Interact();
                     timer = 0f;
                 }
+            }
+            else
+            {
+                nearestInteractable.Interupt();
             }
 
             if(nearestInteractable.InteractionTime != 0)

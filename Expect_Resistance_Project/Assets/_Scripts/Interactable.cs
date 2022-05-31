@@ -9,6 +9,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] string userTip;
     public bool isActive;
     [SerializeField] public UnityEvent onIteraction;
+    [SerializeField] public UnityEvent onProgress;
+    [SerializeField] public UnityEvent onInterupt;
 
     bool allowInteraction = true;
 
@@ -19,5 +21,14 @@ public class Interactable : MonoBehaviour
     {
         isActive = false;
         onIteraction.Invoke();
+    }
+    public void Progress()
+    {
+        onProgress.Invoke();
+    }
+
+    public void Interupt()
+    {
+        onInterupt.Invoke();
     }
 }
