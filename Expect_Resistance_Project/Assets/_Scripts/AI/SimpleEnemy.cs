@@ -62,6 +62,7 @@ namespace noGame.EnemyBehaviour
         internal AlarmSystem Alarm { get => alarm; }
         public float RunSpeed { get => runSpeed; }
         public float PatrollingSpeed { get => patrollingSpeed;  }
+        public LayerMask VisableToEnemy { get => visableToEnemy; set => visableToEnemy = value; }
 
         void Awake()
         {
