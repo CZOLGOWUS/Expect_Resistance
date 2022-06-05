@@ -9,7 +9,7 @@ state Enemy{
     PatrollingState --> enemy_type: player detected\nor alarm activated
     enemy_type --> ChaseState: is\nSimpleEnemy
     enemy_type --> AlarmingState: is\nAlarmingEnemy
-    AlarmingState --> ChaseState: alarm activated\nor no alarm
+    AlarmingState --> ChaseState: alarm activated\nor no alarm found
 
     PatrollingState: Enemy moves left and right\non its platform.
     AlarmingState: Enemy moves towards alarm\nbutton and activates it.

@@ -1,0 +1,96 @@
+@startuml
+
+
+class ObjectiveController{
+    +AdditionalComputerHacked()
+    +MainComputerHacked()
+    +OnPlayerDeath()
+    +TryExit()
+    ..
+    +NextLevel()
+    +ReturnToMainMenu()
+    +RestartLevel()
+    +OnPause()
+    --
+    -mainRequirement: bool
+    -additionalComputers: int
+    -totalTime: float
+    -isPaused: bool
+    -isInMenu: bool
+}
+
+hide <<UIElement>> circle
+
+package UI
+{
+    class HUD <<UIElement>>
+    {
+        +objectiveText
+        +progressBar
+        +userTip
+    }
+    PauseMenu <<UIElement>>
+    class EndScreen <<UIElement>>
+    {
+        +time
+        +score
+    }
+}
+
+package Player{
+    class PlayerInput<<Unity Class>>{}
+
+    PlayerInput->InteractionHandler: interaction\nbutton input
+
+    class InteractionHandler
+    {
+        +interactionRadius: float
+        -detectedObjects: Collider2D[10]
+        -isInteractPressed: bool
+        -timer: float
+        -Update()
+        +OnInteraction()
+    }
+}
+
+InteractionHandler..>Interactable: nearest and in\ninteractionRadius\nto Player
+
+class Interactable{
+    +interactionTime: float
+    +userTip: string
+    +isActive: bool
+    ..
+    +OnInteraction: UnityEvents
+    +OnProgress: UnityEvents
+    +OnInterupt: UnityEvents
+}
+
+note left of Interactable: Component of MainComputer,\nAdditionalComputer or Exit.\nDefines their behaviour based\non associated callbacks.
+
+package "MainComputer/AdditionalComputer"
+{
+
+    class ComputerAnimations
+    {
+        +SetHack()
+        +SetDone()
+    }
+
+    Interactable -[bold]->ComputerAnimations: multiple\nUnityEvent\ncallbacks
+
+}
+
+Interactable-[bold]->ObjectiveController: multiple\nUnityEvent\ncallbacks
+
+ObjectiveController <--> EndScreen: show\nhandle buttons
+ObjectiveController --> HUD::objectiveText : set objectiveText
+
+
+InteractionHandler --> HUD::progressBar : update\nprogreessBar
+InteractionHandler --> HUD::userTip : set\nuserTip
+ObjectiveController <--> PauseMenu: show/hide\nhandle buttons
+
+PlayerInput-->ObjectiveController: pause button\ninput
+
+
+@enduml

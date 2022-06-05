@@ -1,0 +1,33 @@
+@startuml
+
+class MonoBehaviour<<Unity Class>>{}
+
+class CharacterController2D extends MonoBehaviour{
+    +RayOptions
+    +SlopeOptions
+    -PhysicsHandling
+}
+
+class GeneralCharacterController2D extends MonoBehaviour{
+    +Movement
+    +Jumping
+    +WallJumping
+    +Slopes
+}
+class AICharacterController2D extends GeneralCharacterController2D{
+    +AIUtility
+}
+class PlayerCharacterController2D extends GeneralCharacterController2D
+{
+    +Dash
+}
+
+CharacterController2D <-> GeneralCharacterController2D
+
+PlayerCharacterController2D --() InputSystem
+
+AICharacterController2D --() Enemy
+
+
+
+@enduml
